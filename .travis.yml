@@ -4,14 +4,14 @@ cache:
   directories:
     - $TRAVIS_BUILD_DIR/vendor
 
-addons:
-  apt:
-    packages:
-    - php5-common
-    - php5-cli
-
-before_install:
-  - ./travis/deps.sh
+# addons:
+#   apt:
+#     packages:
+#     - php5-common
+#     - php5-cli
+#
+# before_install:
+#   - ./travis/deps.sh
 
 script:
   - php ./composer.phar install
