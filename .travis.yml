@@ -1,21 +1,16 @@
 language: php
 
+php: 5.5
+
 cache:
   directories:
     - $TRAVIS_BUILD_DIR/vendor
 
-# addons:
-#   apt:
-#     packages:
-#     - php5-common
-#     - php5-cli
-#
-# before_install:
-#   - ./travis/deps.sh
+install:
+  - composer install
 
 script:
-  - php ./composer.phar install
-  - ./vendor/bin/phpunit --bootstrap ./tests/phpUnitBootstrap.php tests/
+  - phpunit --bootstrap ./tests/phpUnitBootstrap.php tests/
 
 matrix:
   include:
