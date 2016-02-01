@@ -2,6 +2,10 @@ language: php
 
 php: 5.5
 
+cache:
+  directories:
+    - $TRAVIS_BUILD_DIR/vendor
+
 install:
   - composer install
 
