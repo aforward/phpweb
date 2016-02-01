@@ -1,0 +1,17 @@
+language: php
+
+addons:
+  apt:
+    packages:
+    - php5-common
+    - php5-cli
+
+before_install:
+  - ./travis/deps.sh
+
+script:
+  -  ./vendor/bin/phpunit --bootstrap ./tests/phpUnitBootstrap.php tests/
+
+matrix:
+  include:
+    - os: linux
