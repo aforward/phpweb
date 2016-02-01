@@ -16,7 +16,6 @@ install:
   - composer install
 
 script:
-  - cd $TRAVIS_BUILD_DIR
   - phpunit --bootstrap ./tests/phpUnitBootstrap.php tests/
 
 matrix:
