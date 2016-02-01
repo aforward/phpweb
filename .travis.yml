@@ -3,12 +3,12 @@ language: php
 php:
   - 5.5
 
-env:
-  - DB=mysql
+# env:
+#   - DB=mysql
 
-cache:
-  directories:
-    - $TRAVIS_BUILD_DIR/vendor
+# cache:
+#   directories:
+#     - $TRAVIS_BUILD_DIR/vendor
 
 install:
   - composer install
