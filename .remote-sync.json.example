@@ -1,0 +1,13 @@
+{
+  "uploadOnSave": true,
+  "hostname": "<YOUR IP HERE>",
+  "target": "/var/www/phpweb",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "<YOUR USERNAME HERE>",
+  "keyfile": "/Users/<YOUR USERNAME HERE>/.ssh/id_rsa",
+  "transport": "scp",
+  "deleteLocal": false
+}

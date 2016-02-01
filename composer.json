@@ -1,0 +1,25 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "2.7.*",
+        "monolog/monolog": "1.13.*",
+        "doctrine/cache": "1.3.*",
+        "helpscout/api": "1.3.11",
+        "mustache/mustache": "2.6.*",
+        "pdepend/pdepend": "~1.1",
+        "phpmd/phpmd" : "1.4.*",
+        "sebastian/phpcpd": "*",
+        "google/apiclient": "1.0.*@beta",
+        "michelf/php-markdown": "1.*",
+        "graviton/php-rql-parser": "1.1.*",
+        "geoip2/geoip2": "~2.0",
+        "nickcernis/html-to-markdown": "dev-master",
+        "suin/php-rss-writer": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.4.*",
+        "domnikl/statsd": "~2.0",
+        "google/apiclient": "1.0.*@beta",
+        "geoip2/geoip2": "~2.0",
+        "phpdocumentor/phpdocumentor" :"2.*"
+    }
+}
