@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
 spl_autoload_register(function ($fullName) {
     $namespaces = explode('\\', $fullName);
     $className = array_pop($namespaces);
@@ -11,5 +13,8 @@ spl_autoload_register(function ($fullName) {
         }
     }
     $path .= "/{$className}.php";
+    if (!file_exists($path)) {
+        throw new Exception("$fullName not found in $path");
+    }
     require_once $path;
 });
