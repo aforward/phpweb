@@ -14,7 +14,8 @@ spl_autoload_register(function ($fullName) {
     }
     $path .= "/{$className}.php";
     if (!file_exists($path)) {
-        throw new Exception("$fullName not found in $path");
+        return false;
     }
     require_once $path;
+    return true;
 });
