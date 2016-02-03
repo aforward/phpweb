@@ -3,7 +3,6 @@
 namespace Myapp\Models;
 
 use Phalcon\Mvc\Model\Behavior\Timestampable;
-use Rest\Models\Behaviors\Auditable;
 
 abstract class BaseModels extends \Phalcon\Mvc\Model
 {
@@ -22,7 +21,7 @@ abstract class BaseModels extends \Phalcon\Mvc\Model
         // Keys are the real names in the table and
         // the values their names in the application
         foreach ($properties as $property) {
-            $map[\Util::phpcase($property->getName())] = $property->getName();
+            $map[self::snakeCase($property->getName())] = $property->getName();
         }
         return $map;
     }
@@ -50,10 +49,6 @@ abstract class BaseModels extends \Phalcon\Mvc\Model
 
         // Allow for auditing
         $this->keepSnapshots(true);
-
-        // Log creates and updates
-        $this->addBehavior(new Auditable());
-
     }
 
     // TODO: This is because hasChanged throws an exception when record is not saved yet
@@ -148,5 +143,10 @@ abstract class BaseModels extends \Phalcon\Mvc\Model
     private static function randomHex($len)
     {
         return bin2hex(openssl_random_pseudo_bytes($len));
+    }
+
+    private static function snakeCase($camelCase)
+    {
+        return \Phalcon\Text::uncamelize($camelCase);
     }
 }
